@@ -208,6 +208,16 @@ move around or transform
   transform: translateX(0);
  }
 }
+@keyframes moveInButtonBottom {
+ 0%{
+  opacity: 0;
+  transform: translateY(30px);
+ }
+ 100%{
+  opacity: 1;
+  transform: translateY(0);
+ }
+}
 .btn:link,
 .btn:visited{
  text-transform: uppercase;
@@ -216,18 +226,70 @@ move around or transform
  display: inline-block;
  border-radius:100px;
  transition: all .2s;
- /*  */
+ /* For transition to work it needs to be set on the initial state of the button */
+ position: relative;
 }
 .btn:hover{
  transform: translateY(-3px);
 /* To animate an element upwards we use negative values */
+ box-shadow: 0 10px 20px rgba(0,0,0,.2);
+/* The box shadow has many properties, the first value is the offset in the x direction we only want it on the y direction we lead with 0, hte second value is the y direction, the third value is the blurr property of the shadow, and the last item is the color of the shadow.  */
 }
 .btn:active{
- transform:translateY(-1px)
+ transform:translateY(-1px);
  /* This is when button is clicked it moves the element down 1px to show the activity */
+ box-shadow: 0 5px 10px rgba(0,0,0,.2)
+ /* When the button is this state, we want the animation to be like it is going closer to the page. */
+
 }
 .btn-white{
  background-color: #fff;
  color:#777;
+}
+.btn::after{
+/* This is a css pseudo class that puts a fake element of the same element
+ First an after pseudo element we need to specify the content property, we need to call it or it will not appear.
+ Then we specify a display property, we match it to the same element we are specifying.
 
+ The element that is being created is considered to be a child of the element we are making and we can use percentages to specify attributes such as height and width:
+
+
+  ------ Placing the pseudo button behind the button ------
+ Because we are putting the pseudo button element behind the button element we use the absolute position, however, because absolute position works with the nearest relative we add position:relative to the original button element.
+
+ the z index defines the position of elements that are on top of one another
+
+------ defining after state events from original states ------
+ .btn:hover::after which means when we hover the button we want certain styles to take effect after the hover state
+*/
+ content: "";
+ display: inline-block;
+ height: 100%;
+ width:100%;
+ border-radius: 100px;
+ position: absolute;
+ top:0;
+ left:0;
+ z-index: -1;
+ transition: all .4s;
+}
+.btn-white::after{
+ background-color: #fff;
+ color:#777;
+}
+.btn:hover::after{
+ transform: scaleX(1.4) scaleY(1.6);
+ /* it increases the size of the element
+ we can use scaleX for x axis
+ scaleY for y axis
+ */
+ opacity: 0;
+ /* To fade something easily use opacity 0 */
+}
+.btn-animated{
+ /* Because we only want certain buttons to be animated we set this class
+ to provide the animations specific to the buttons */
+ animation: moveInButtonBottom .5s ease-out .75s;
+ animation-fill-mode: backwards;
+ /* The animation fill mode will automatic apply all of the states of animation at 0% */
 }
