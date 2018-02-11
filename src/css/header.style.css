@@ -1,0 +1,233 @@
+/* the vh means that the header element will be 95% of the viewport height all the time. In browser
+
+background cover does is the width of the viewport element will fit no matter the size we also add the background position top to alert our browser that the image will always stay consistent on top as the browser is resized, the bottom part of the image will be cropped out, the effect is similar with bottom.
+
+To specify gradients we use the background iamge property to add a gradient we need to specify another element of background image, we do that by adding a comma to the background image line.
+
+A linear gradient takes the following parameters, the gradient direction which is specified by "to right", we can also add a second direction which is "to right bottom" a light color  argument and a dark color argument.
+
+The order that we have it in says that the linear gradient will stay on top while the image is on the bottom, to see the image the colors need an opacity meter
+
+----- Clip Path -----
+ The clip path is a modern property that specifies a polygon that the image will be visable, we will use the polygon function to specify the area that will be displayed.
+
+ *** Polygon ***
+ The polygon function affects the borders of the element. The order in which it goes is from top left, top right, bottom right, bottom left.
+
+ top left: because we want the top left corner to stay the same x and y will equate to 0
+
+ top-right: we count from the left and right because we want it go all the way to the right we will say 100%, and we do not want to change tye y direction we will mark it with 0
+
+ bottom-right: the same follows we measure the left and right which is x the number on our left and it is 100%. However the y direction is not 100% we will experiement with 45% we can also use px
+
+ bottom-left: x is back to 0 so we don't change, but we did change in the y direction before but bottom left point will end at 100%
+
+ ----- VH ----
+ viewport height for ideal
+
+---- Absolute positioning -----
+To put the image where we want it to be the starting of the measurment it needs to bind itself to a position relative parent element in this case it is the header class.
+.header will be the references
+
+For the title of the webpage it is important to use the H1 for the search area.
+
+the powerful feature of the span element is that it can be used to style individual text.
+The heading on the primary website homepage
+
+To stack the text one of the other it's a good idea to use block level elements  because they occupy all of the width before it, and it provides a line break before and after the element
+
+a span is an inline element like text and can be displayed as a block element.
+
+------ letter-spacing -------
+ This separates the letter of the title by a specific pixel distance it let's the text breathe and makes it look big
+
+Css should be stacked in the natural order of the html.
+
+The best way to center an element we use position absolute
+
+left 50% means that the element's edge starts at 50% of the parent
+element
+
+same for top if we ad 50% it means that the measurement starts at the top of the element. We need to use better measurements to move the horizontal center. Instead we are going to use translate to adjust the positioning
+
+-------- transform TODO Define the other functions --------
+
+translate: takes an x and y. It the horizontal and vertical distance of the element. It does not have a relation to the parent.
+
+
+
+-------- Css Animations -------
+
+There are two types of animations there is a transition which is the easiest and change the properties of the element of an event
+
+We start using transition by using the @keyframes then we give the animation a name, the top heading OUTDOORS will be animated from the right to the left side.
+
+We define this as moveInLeft
+
+------ backface-visibility ------
+
+ Depending on the animation we may not need to se the back of it. If we are doing a spinning animation then we need to see the back but if we are not doing a spin animation or anything that requires viewing the back of the element we use the hidden property
+*/
+ /* we start with 0% which is the start, and the finishing touch is at 100%, we can add the percentage time of the event
+
+ In the beginning we want it to be invisible but be fully seen at the end
+
+  When the animation starts it will be on the left side to animate either left or right we juse the translateX function.
+
+  If we wanted to animate the top to bottom we use translateY
+
+  Because it starts from the left we use a negative value because we want it to start on the left, at 100% we want it to be where it lands.
+
+  We use translate(0) to define where the element it needs to look in the position we want it.
+
+  ------Applying animation -------
+
+  We need to define the name of the animation name, we use it on the element we want to move. To do that we use the animation-name property, then we add the animation-duration property to start the animation.
+
+  The animation also has a forward jerking motion, and to do that it uses positive values with the translateX function.
+
+  animation-delay; this will delay the start of the animation
+
+  animation-iteration-count: this will play the animation for a specefic or infite amount of times
+
+  animation-timing-function: This function will define how fast or slow the animation parameters happen over time
+
+  cubic-bezier: gives us the ability to write a custom function
+
+
+  ----Fixing the position error that occurs in animations -----
+
+  There are times that the animation will move the element up. To avoid this we use
+  backface-visiblity: hidden
+
+ ---------- Pseudo Classes---------
+ :link only works with anchor element is a pseudo class for the link, these are special states of the selector when it meets certain criteria
+ :visited state this is when a person has used the button and is now seeing the button again
+
+-------- btn { btn-white }  -----
+
+We will be using these different selectors to accentuate the different colrs
+For example the color would be grey for green buttons and it would be different for other buttons
+
+------ Centering the button ------
+We use the display: inline-block to treat this element as if it was text
+if it's text and we want it to be at the center we set the text-box we use
+text-align to center
+
+------- transform ----------
+Is the most important property to create effects on the webs to make things
+move around or transform
+ translateY
+*/
+
+.header{
+ height: 95vh;
+ background-image:
+  linear-gradient(
+   to right bottom,
+   rgba(126, 213, 111, .8),
+   rgba(40, 180, 131,.8)),
+  url(../img/hero.jpg);
+ background-size: cover;
+ background-position: top;
+ position: relative;
+ clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
+}
+.logo-box{
+ position: absolute;
+ top:40px;
+ left:40px;
+}
+.logo{
+ height:35px;
+}
+.logo:hover{
+  animation: moveInLeft .5s ease-out;
+ }
+.text-box{
+ position: absolute;
+ top: 40%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ text-align: center;
+}
+.heading-primary{
+ color: #fff;
+ text-transform: uppercase;
+ backface-visibility: hidden;
+ margin-bottom: 60px;
+}
+.heading-primary-main{
+ display: block;
+ font-size: 60px;
+ font-weight: 400;
+ letter-spacing: 35px;
+
+ animation: moveInLeft 1s ease-out;
+
+ /*
+ animation-iteration-count: 3;
+  animation-delay: 3s;*/
+}
+.heading-primary-sub{
+ display: block;
+ font-size: 20px;
+ font-weight: 700;
+ letter-spacing: 17.4px;
+
+ animation: moveInRight 1s ease-out;
+
+}
+@keyframes moveInLeft {
+
+ 0%{
+  opacity: 0;
+  transform: translateX(-100px) rotate3d(2, -2, -1, 1, 120deg) rotate(21deg);
+ }
+ 60%{
+  transform:rotate(120deg) rotate3d(1, .5, .2 270deg);;/* deg is used for rations*/
+ }
+ 80%{
+  transform: translateX(10px) rotate3d(1, .6, 3, 360deg);
+ }
+ 100%{
+  opacity: 1;
+  transform: translate(0);
+ }
+}
+@keyframes moveInRight {
+ 0%{
+  opacity: 0;
+  transform: translateX(100%);
+ }
+ 80%{
+  transform: translateX(-10px);
+ }
+ 100%{
+  opacity: 1;
+  transform: translateX(0);
+ }
+}
+.btn:link,
+.btn:visited{
+ text-transform: uppercase;
+ text-decoration: none;
+ padding:15px 40px;
+ display: inline-block;
+ border-radius:100px;
+ transition: all .2s;
+ /*  */
+}
+.btn:hover{
+ transform: translateY(-3px);
+/* To animate an element upwards we use negative values */
+}
+.btn:active{
+ transform:translateY(-1px)
+ /* This is when button is clicked it moves the element down 1px to show the activity */
+}
+.btn-white{
+ background-color: #fff;
+ color:#777;
+
+}
