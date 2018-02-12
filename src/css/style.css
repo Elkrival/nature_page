@@ -15,18 +15,35 @@ line height is the size of the font lines.
 These lines will reset the body
 
 we add the padding element to add a border around the webpage
+
+
+------ REM units-----
+In order to set code to rem units we need to set the html to have a pixel size. Therefore by setting the root size to 10px that means that 1 rem is 10px.
+
+However people with sight disadvantage change they increase the default size of the font of the browser. If we use px on the html then we are removing that ability from the user to be able to change the font size of everything themselves.
+
+Instead we will use a percentage to get the default font size given by the browser. We use the default font size to 62.5%.
+
+------ Inheritance------
+We should do our best to use inheritance it is good practice. for example if we apply box sizing to the body of our element we can force inherit the property to all of the elements on our page by using box-sizing inherit.
 */
 
-* {
+*,
+*::after,
+*::before{
  margin:0;
  padding:0;
- box-sizing: border-box;
+ box-sizing:inherit;
+}
+html{
+ font-size: 62.5%;
 }
 body{
  font-family:"Lato", sans-serif;
  font-weight: 400;
- font-size: 16px;
+ /* font-size: 16px; */
  line-height: 1.7;
  color: #777;
- padding: 30px;
+ padding: 3rem;
+ box-sizing: border-box;
 }

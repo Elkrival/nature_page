@@ -118,6 +118,9 @@ text-align to center
 Is the most important property to create effects on the webs to make things
 move around or transform
  translateY
+
+------ Rem Units -----------
+We want a simple way to change the size of the font in all types of pages and devices, to do so we use rem units as a way to make that change
 */
 
 .header{
@@ -133,18 +136,18 @@ move around or transform
  position: relative;
  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
 }
-.logo-box{
+.header__logo-box{
  position: absolute;
- top:40px;
- left:40px;
+ top:4rem;
+ left:4rem;
 }
-.logo{
- height:35px;
+.header__logo{
+ height:3.5rem;
 }
-.logo:hover{
+.header__logo:hover{
   animation: moveInLeft .5s ease-out;
  }
-.text-box{
+.header__text-box{
  position: absolute;
  top: 40%;
  left: 50%;
@@ -155,13 +158,13 @@ move around or transform
  color: #fff;
  text-transform: uppercase;
  backface-visibility: hidden;
- margin-bottom: 60px;
+ margin-bottom: 6rem;
 }
-.heading-primary-main{
+.heading-primary--main{
  display: block;
- font-size: 60px;
+ font-size: 6rem;
  font-weight: 400;
- letter-spacing: 35px;
+ letter-spacing: 3.5rem;
 
  animation: moveInLeft 1s ease-out;
 
@@ -169,11 +172,11 @@ move around or transform
  animation-iteration-count: 3;
   animation-delay: 3s;*/
 }
-.heading-primary-sub{
+.heading-primary--sub{
  display: block;
- font-size: 20px;
+ font-size: 2rem;
  font-weight: 700;
- letter-spacing: 17.4px;
+ letter-spacing: 1.75rem;
 
  animation: moveInRight 1s ease-out;
 
@@ -182,13 +185,13 @@ move around or transform
 
  0%{
   opacity: 0;
-  transform: translateX(-100px) rotate3d(2, -2, -1, 1, 120deg) rotate(21deg);
+  transform: translateX(-10rem) rotate3d(2, -2, -1, 1, 120deg) rotate(21deg);
  }
  60%{
   transform:rotate(120deg) rotate3d(1, .5, .2 270deg);;/* deg is used for rations*/
  }
  80%{
-  transform: translateX(10px) rotate3d(1, .6, 3, 360deg);
+  transform: translateX(1rem) rotate3d(1, .6, 3, 360deg);
  }
  100%{
   opacity: 1;
@@ -201,7 +204,7 @@ move around or transform
   transform: translateX(100%);
  }
  80%{
-  transform: translateX(-10px);
+  transform: translateX(-1rem);
  }
  100%{
   opacity: 1;
@@ -211,7 +214,7 @@ move around or transform
 @keyframes moveInButtonBottom {
  0%{
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(3rem);
  }
  100%{
   opacity: 1;
@@ -222,27 +225,28 @@ move around or transform
 .btn:visited{
  text-transform: uppercase;
  text-decoration: none;
- padding:15px 40px;
+ padding:1.5rem 4rem;
  display: inline-block;
- border-radius:100px;
+ border-radius:10rem;
  transition: all .2s;
  /* For transition to work it needs to be set on the initial state of the button */
  position: relative;
+ font-size: 1.6rem;
 }
 .btn:hover{
- transform: translateY(-3px);
+ transform: translateY(-.3rem);
 /* To animate an element upwards we use negative values */
- box-shadow: 0 10px 20px rgba(0,0,0,.2);
+ box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
 /* The box shadow has many properties, the first value is the offset in the x direction we only want it on the y direction we lead with 0, hte second value is the y direction, the third value is the blurr property of the shadow, and the last item is the color of the shadow.  */
 }
 .btn:active{
- transform:translateY(-1px);
+ transform:translateY(-.1rem);
  /* This is when button is clicked it moves the element down 1px to show the activity */
- box-shadow: 0 5px 10px rgba(0,0,0,.2)
+ box-shadow: 0 .5rem 1rem rgba(0,0,0,.2)
  /* When the button is this state, we want the animation to be like it is going closer to the page. */
 
 }
-.btn-white{
+.btn--white{
  background-color: #fff;
  color:#777;
 }
@@ -266,14 +270,14 @@ move around or transform
  display: inline-block;
  height: 100%;
  width:100%;
- border-radius: 100px;
+ border-radius: 10rem;
  position: absolute;
  top:0;
  left:0;
  z-index: -1;
  transition: all .4s;
 }
-.btn-white::after{
+.btn--white::after{
  background-color: #fff;
  color:#777;
 }
@@ -286,7 +290,7 @@ move around or transform
  opacity: 0;
  /* To fade something easily use opacity 0 */
 }
-.btn-animated{
+.btn--animated{
  /* Because we only want certain buttons to be animated we set this class
  to provide the animations specific to the buttons */
  animation: moveInButtonBottom .5s ease-out .75s;
