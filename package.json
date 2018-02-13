@@ -2,7 +2,7 @@
   "name": "nature",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Elkrival.github.io/sweet-nature",
+  "homepage": "https://Elkrival.github.io/nature_page",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "node-sass-chokidar": "^0.0.3",
