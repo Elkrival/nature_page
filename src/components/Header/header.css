@@ -25,7 +25,7 @@
   text-align: center; }
 
 .heading-primary {
-  color: #eee;
+  color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem; }
@@ -96,7 +96,7 @@
 
 .btn--white {
   background-color: #fff;
-  color: #eee; }
+  color: #777; }
 
 .btn::after {
   content: "";
@@ -111,7 +111,7 @@
   transition: all .4s; }
 
 .btn--white::after {
-  background-color: #eee;
+  background-color: #fff;
   color: #777; }
 
 .btn:hover::after {
