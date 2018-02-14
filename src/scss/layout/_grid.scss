@@ -59,7 +59,6 @@ When we set up our attributes inside our brackets we use clojures to then speici
 */
 .row{
  max-width: $grid-width;
- background-color: #eee;
  margin: 0 auto;
  &:not(:last-child){
   margin-bottom: $gutter-vertical;
@@ -68,7 +67,6 @@ When we set up our attributes inside our brackets we use clojures to then speici
  @include clearFix;
 
  [class^="col-"]{
-  background-color: orangered;
   float:left;
   &:not(:last-child){
    margin-right: $gutter-horizontal

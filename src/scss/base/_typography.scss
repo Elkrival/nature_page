@@ -26,3 +26,34 @@ body{
   animation: moveInRight 1s ease-out;
  }
 }
+.heading-secondary{
+ font-size: 3.5rem;
+ text-transform: uppercase;
+ font-weight: 700;
+ display: inline-block;
+ // will make a block element of the text and only occupy the width it holds and not the entire width of the viewport
+ background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+ -webkit-background-clip:text;
+ // This property is new to css, it will make an outline and clip the text exactly as it shows, it removes the block around the text
+ color: transparent;
+ // if we do not use the color transparent it will overshadow the original color
+ letter-spacing: 2px;
+ transition: all .2s;
+
+ &:hover{
+  transform: skewX(15deg) skewY(2deg) scale(1.1);
+  text-shadow: .5rem 1rem 2rem rgba($color-black, .2)
+ }
+}
+.heading-tertiary{
+ font-size: $default-font-size;
+ font-weight: 700;
+ text-transform: uppercase;
+}
+.paragraph{
+ font-size: $default-font-size;
+ // we want to have space between the paragraphs but make sure it does not bleed over to the margin. We use the not(last-child) functions
+ &:not(last-child){
+  margin-bottom: 3rem;
+ }
+}

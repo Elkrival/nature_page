@@ -19,7 +19,7 @@
    to right bottom,
    rgba($color-primary-light, .8),
    rgba($color-primary-dark,.8)),
-  url(./img/hero.jpg);
+  url(./img/dog_hero.jpeg);
 // imports for images are based on the main file
  background-size: cover;
  background-position: top;
@@ -31,7 +31,8 @@
   left:4rem;
  }
  &__logo{
- height:3.5rem;
+ height:15rem;
+ filter: invert(95%);
  }
  &__logo:hover{
   animation: moveInLeft .5s ease-out;

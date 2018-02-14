@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../img/logo-white.png'
+import logo from '../../img/chihuahua.png'
 /*
 
 Implementing BEM system
@@ -21,10 +21,10 @@ const Header = () =>{
      </div>
     <div className="header__text-box">
     <h1 className="heading-primary">
-     <span className="heading-primary--main">Outdoors </span>
-     <span className="heading-primary--sub">is where life happens</span>
+     <span className="heading-primary--main">Furry Friends </span>
+     <span className="heading-primary--sub">Our favorite companion!</span>
     </h1>
-     <a href="#here" className="btn btn--white btn--animated">Discover our tours</a>
+     <a href="#here" className="btn btn--white btn--animated">To Infinity and Beyond &rArr;	</a>
     </div>
    </header>
    // <section className="grid-test">
