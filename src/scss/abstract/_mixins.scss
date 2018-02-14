@@ -6,6 +6,7 @@ To use clearfix we call the mixin and we alter the pseudo class of the float ele
 we use empty content, and display as table but the icing on the cake is the clear:both
 */
 
+
 @mixin clearFix{
  &::after{
   content:"";
