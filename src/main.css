@@ -80,7 +80,7 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: linear-gradient(to right, #FFAB91, #FF5722);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 2px;
@@ -162,15 +162,15 @@ When we think of utility functions we think of how we will be doing the spacing 
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
-  color: #55c57a;
+  color: #FF7043;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 1px solid #55c57a;
+  border-bottom: 1px solid #FF7043;
   padding: 3px;
   transition: all .2s; }
 
 .btn-text:hover {
-  background-color: #55c57a;
+  background-color: #FF7043;
   color: #fff;
   box-shadow: -1rem 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px); }
@@ -294,7 +294,7 @@ When we set up our attributes inside our brackets we use clojures to then speici
 */
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(./img/dog_hero.jpeg);
+  background-image: linear-gradient(to right bottom, rgba(255, 171, 145, 0.8), rgba(255, 87, 34, 0.8)), url(./img/dog_hero.jpeg);
   background-size: cover;
   background-position: top;
   position: relative;
